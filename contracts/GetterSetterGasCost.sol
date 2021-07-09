@@ -31,12 +31,4 @@ contract GetterSetterGasCost {
       return publicVar;
     }
 
-    /* DELETE this (and in according test) to make public access in doWorkAndReatPublic even cheaper than private! */
-    function emitPrivateVar() external {
-      emit SomeEvent(_privateVar);
-    }
-    function emitPublicVar() external {
-      emit SomeEvent(publicVar);
-    }
-
 }
