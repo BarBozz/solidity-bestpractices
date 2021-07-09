@@ -21,6 +21,17 @@ contract GetterSetterGasCost {
     }
 
     /* Helper methods to make differences of read visible in gas reporter */
+
+    function doWorkAndReadPrivate() external returns(uint256) {
+      emit SomeEvent(5);
+      return _privateVar;
+    }
+    function doWorkAndReadPublic() external returns(uint256) {
+      emit SomeEvent(5);
+      return publicVar;
+    }
+
+    /* DELETE this (and in according test) to make public access in doWorkAndReatPublic even cheaper than private! */
     function emitPrivateVar() external {
       emit SomeEvent(_privateVar);
     }
