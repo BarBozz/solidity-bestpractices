@@ -14,12 +14,12 @@ describe("GetterSetterGasCost", function() {
 
   });
 
-  it("should read public var", async () => {
-    contract.doWorkAndReadPublic();
+  it("should read and emit public var", async () => {
+    contract.emitPublicVar();
   });
 
-  it("should read private var", async () => {
-    contract.doWorkAndReadPrivate();
+  it("should read and emit private var", async () => {
+    contract.emitPrivateVar();
   });
 
   it("should work public var", async () => {

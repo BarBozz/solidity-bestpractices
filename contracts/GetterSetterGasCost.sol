@@ -21,13 +21,11 @@ contract GetterSetterGasCost {
     }
 
     /* Helper methods to make differences of read visible in gas reporter */
-    function doWorkAndReadPrivate() external returns(uint256) {
-      emit SomeEvent(1);
-      return _privateVar;
+    function emitPrivateVar() external {
+      emit SomeEvent(_privateVar);
     }
-    function doWorkAndReadPublic() external returns(uint256) {
-      emit SomeEvent(2);
-      return publicVar;
+    function emitPublicVar() external {
+      emit SomeEvent(publicVar);
     }
 
 }
